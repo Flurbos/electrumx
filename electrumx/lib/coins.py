@@ -348,6 +348,7 @@ class BitcoinMixin(object):
     RPC_PORT = 8332
 
 class Unobtanium(Coin):
+    NAME = "Unobtanium"
     SHORTNAME = "UNO"
     NET = "mainnet"
     XPUB_VERBYTES = bytes.fromhex("0488b21e")
@@ -360,14 +361,16 @@ class Unobtanium(Coin):
                     '099a68305232e552d96ccbe8e2c52b75')
     RPC_PORT = 8005
     PEERS = [
-        'electrumx1.unobtanium.uno s50005 t50006',
-        'nigeriax1.unobtanium.uno s50005 t50006',
-        'electrum1.unobtanium.uno s50005 t50006',
+        'electrumx1.unobtanium.uno s50005',
+        'nigeriax1.unobtanium.uno s50005',
+        'electrum1.unobtanium.uno s50005',
         'electrum2.unobtanium.uno s50005 t50006',
-        'nigeria1.unobtanium.uno s50005 t50006',
+        'nigeria1.unobtanium.uno s50005',
         'nigeria2.unobtanium.uno s50005 t50006',
-        'electrumx1.flurbo.xyz s50005 t50006',
+        'electrumx1.flurbo.xyz s50005',
         'electrumx2.flurbo.xyz s50005 t50006',
+        'electrumx1.btcinfo.sdf.org s50005',
+        'electrumx2.btcinfo.sdf.org s50005 t50006',
     ]
 
 class HOdlcoin(Coin):
