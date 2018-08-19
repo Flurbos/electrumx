@@ -134,6 +134,13 @@ def test_COIN_NET():
     e = Env()
     assert e.coin == lib_coins.PivxTestnet
     os.environ.pop('NET')
+    # Unobtanium
+    os.environ['COIN'] = 'Unobtanium'
+    e = Env()
+    assert e.coin == lib_coins.Unobtanium
+    os.environ['NET'] = 'mainnet'
+    e = Env()
+    os.environ.pop('NET')
 
 
 def test_CACHE_MB():
