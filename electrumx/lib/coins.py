@@ -356,11 +356,18 @@ class Unobtanium(Coin):
     P2PKH_VERBYTE = bytes.fromhex("1E")
     P2SH_VERBYTES = [bytes.fromhex("82")]
     FORK_HEIGHT = 1042000
-    WIF_BYTE = bytes.fromhex("EO")
+    WIF_BYTE = bytes.fromhex("E0")
     GENESIS_HASH = ('000004c2fc5fffb810dccc197d603690'
                     '099a68305232e552d96ccbe8e2c52b75')
     RPC_PORT = 8005
+    
+    TX_COUNT = 793171
+    TX_COUNT_HEIGHT = 630000
+    TX_PER_BLOCK = 5
+
     PEERS = [
+        'node1.electrum.uno s65534',
+        'node2.electrum.uno s50005',
         'electrumx1.unobtanium.uno s50005',
         'nigeriax1.unobtanium.uno s50005',
         'electrum1.unobtanium.uno s50005',
