@@ -347,7 +347,7 @@ class BitcoinMixin(object):
                     '4ff763ae46a2a6c172b3f1b60a8ce26f')
     RPC_PORT = 8332
 
-class Unobtanium(Coin):
+class Unobtanium(AuxPowMixin, Coin):
     NAME = "Unobtanium"
     SHORTNAME = "UNO"
     NET = "mainnet"
@@ -355,29 +355,52 @@ class Unobtanium(Coin):
     XPRV_VERBYTES = bytes.fromhex("0488ade4")
     P2PKH_VERBYTE = bytes.fromhex("1E")
     P2SH_VERBYTES = [bytes.fromhex("82")]
-    FORK_HEIGHT = 1042000
+    FORK_HEIGHT = 600191
     WIF_BYTE = bytes.fromhex("E0")
     GENESIS_HASH = ('000004c2fc5fffb810dccc197d603690'
                     '099a68305232e552d96ccbe8e2c52b75')
-    RPC_PORT = 8005
-    
+    RPC_PORT = 65534
+
+    PEER_DEFAULT_PORTS = {'t': '50001', 's': '50002'}
+
     TX_COUNT = 793171
     TX_COUNT_HEIGHT = 630000
     TX_PER_BLOCK = 5
 
     PEERS = [
-        'node1.electrum.uno s65534',
-        'node2.electrum.uno s50005',
-        'electrumx1.unobtanium.uno s50005',
-        'nigeriax1.unobtanium.uno s50005',
+        'node1.unobtanium.uno s65534',
+        'node2.unobtanium.uno s50002',
         'electrum1.unobtanium.uno s50005',
         'electrum2.unobtanium.uno s50005 t50006',
         'nigeria1.unobtanium.uno s50005',
         'nigeria2.unobtanium.uno s50005 t50006',
-        'electrumx1.flurbo.xyz s50005',
-        'electrumx2.flurbo.xyz s50005 t50006',
-        'electrumx1.btcinfo.sdf.org s50005',
-        'electrumx2.btcinfo.sdf.org s50005 t50006',
+    ]
+
+class UnobtaniumTestnet(Unobtanium):
+    SHORTNAME = "tUNO"
+    NET = "testnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    P2PKH_VERBYTE = bytes.fromhex("1E")
+    P2SH_VERBYTES = [bytes.fromhex("44")]
+    WIF_BYTE = bytes.fromhex("EF")
+
+    GENESIS_HASH = ('000007b02afb00ae826d948d88f4973c'
+                    '00073425f965917f6298b6d280bde021')
+
+    # TX_STUFF NEEDS ADUSTING.
+    TX_COUNT = 20
+    TX_COUNT_HEIGHT = 20800
+    TX_PER_BLOCK = 1
+
+    RPC_PORT = 65522
+
+    PEER_DEFAULT_PORTS = {'t': '51001', 's': '51002'}
+
+    # PEERS NEEDS ADJUSTING.
+    PEERS = [
+        'testnet1.unobtanium.uno s50002',
+        'testnet2.unobtanium.uno s t',
     ]
 
 class HOdlcoin(Coin):
