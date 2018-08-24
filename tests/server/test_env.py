@@ -141,6 +141,10 @@ def test_COIN_NET():
     os.environ['NET'] = 'mainnet'
     e = Env()
     os.environ.pop('NET')
+    assert e.coin == lib_coins.UnobtaniumTestnet
+    os.environ['NET'] = 'testnet'
+    e = Env()
+    os.environ.pop('NET')
 
 
 def test_CACHE_MB():
