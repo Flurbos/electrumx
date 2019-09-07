@@ -348,26 +348,24 @@ class Unobtanium(AuxPowMixin, Coin):
     NET = "mainnet"
     XPUB_VERBYTES = bytes.fromhex("0488b21e")
     XPRV_VERBYTES = bytes.fromhex("0488ade4")
-    P2PKH_VERBYTE = bytes.fromhex("1E")
-    P2SH_VERBYTES = [bytes.fromhex("82")]
-    FORK_HEIGHT = 600191
+    P2PKH_VERBYTE = bytes.fromhex("82")
+    P2SH_VERBYTES = [bytes.fromhex("1E")]
+    FORK_HEIGHT = 600000
     WIF_BYTE = bytes.fromhex("E0")
     GENESIS_HASH = ('000004c2fc5fffb810dccc197d603690'
                     '099a68305232e552d96ccbe8e2c52b75')
     RPC_PORT = 65535
-
+    DESERIALIZER = lib_tx.DeserializerAuxPow
     PEER_DEFAULT_PORTS = {'t': '50001', 's': '50002'}
 
-    TX_COUNT = 1399754
-    TX_COUNT_HEIGHT = 1169732
+    TX_COUNT = 1585159
+    TX_COUNT_HEIGHT = 1350924
     TX_PER_BLOCK = 1
 
     PEERS = [
         '127.0.0.1 s t',
-        'electrum1.unobtanium.uno s50001',
-        'electrum2.unobtanium.uno s50001 t50006',
-        'electrum3.unobtanium.uno s50001',
-        'electrum4.unobtanium.uno s50005 t50006',
+        'electrum1.unobtanium.uno s50002 t50001',
+        'electrum2.unobtanium.uno s t',
     ]
 
 class UnobtaniumTestnet(Unobtanium):
