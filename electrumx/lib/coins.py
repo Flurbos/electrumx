@@ -355,7 +355,7 @@ class Unobtanium(AuxPowMixin, Coin):
     GENESIS_HASH = ('000004c2fc5fffb810dccc197d603690'
                     '099a68305232e552d96ccbe8e2c52b75')
     RPC_PORT = 65535
-    DESERIALIZER = lib_tx.DeserializerAuxPow
+    
     PEER_DEFAULT_PORTS = {'t': '50001', 's': '50002'}
 
     TX_COUNT = 1585159
