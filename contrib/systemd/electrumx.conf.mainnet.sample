@@ -1,4 +1,4 @@
-# TESTNET BASIC SETUP
+# MAINNET BASIC SETUP
 # WARNING: Change the unobtaniumd_username and unobtaniumd_passwords!
 
 # default /etc/electrumx.conf for systemd
@@ -6,7 +6,7 @@
 DB_DIRECTORY = /etc/electrumx/
 
 # Unobtanium Node RPC Credentials
-# DAEMON_URL = http://unobtaniumd_usrname:unobtaniumd_pass_dontusethis@localhost:65531
+DAEMON_URL = http://unobtaniumd_username:unobtaniumd_password_DONOT_USE_THIS@localhost:65535/
 
 # See https://github.com/flurbos/electrum/blob/master/docs/ENVIRONMENT.rst
 # information about other configuration settings you probably want to consider
@@ -14,14 +14,11 @@ DB_DIRECTORY = /etc/electrumx/
 ELECTRUMX = /usr/local/bin/electrumx_server
 USERNAME = electrumx
 COIN = Unobtanium
-NET = testnet
+NET = mainnet
 DB_ENGINE = leveldb
 REORG_LIMIT = 200
-DONATION_ADDRESS = Uhbd2JFRv3eMse9kzMfn8TdeybPoSFzWUc
+DONATION_ADDRESS = uXoKXkoBjLKdTsPjsTEq4n9FitcEpzDUpC
 SSL_CERTFILE = /etc/electrumx/server.crt
 SSL_KEYFILE = /etc/electrumx/server.key
-TCP_PORT = 51001
-SSL_PORT = 51002
 
 # Listen on all interfaces (HOST IP):
-HOST = 0.0.0.0
