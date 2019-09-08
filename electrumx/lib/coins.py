@@ -380,7 +380,6 @@ class UnobtaniumTestnet(Unobtanium):
     GENESIS_HASH = ('000007b02afb00ae826d948d88f4973c'
                     '00073425f965917f6298b6d280bde021')
 
-    # TX_STUFF NEEDS ADUSTING.
     TX_COUNT = 9234
     TX_COUNT_HEIGHT = 9210
     TX_PER_BLOCK = 1
@@ -389,10 +388,8 @@ class UnobtaniumTestnet(Unobtanium):
 
     PEER_DEFAULT_PORTS = {'t': '51001', 's': '51002'}
 
-    # PEERS NEEDS ADJUSTING.
     PEERS = [
         '127.0.0.1 s51002',
-        '165.227.145.41 s51002',
     ]
 
 class NameMixin(object):
